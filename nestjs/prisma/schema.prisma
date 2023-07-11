@@ -27,16 +27,46 @@ model Wallet {
 }
 
 model WalletAsset {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  wallet_id String
-  asset_id  String
-  amount    Float
-  shares    Int      @db.Int
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  Wallet Wallet @relation(fields: [wallet_id], references: [id])
-  asset  Asset  @relation(fields: [asset_id], references: [id])
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  Wallet     Wallet   @relation(fields: [wallet_id], references: [id])
+  wallet_id  String
+  Asset      Asset    @relation(fields: [asset_id], references: [id])
+  asset_id   String
+  shares     Int      @db.Int
+  version    Int
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
 
   @@unique([wallet_id, asset_id])
+}
+
+// model Order {
+//   id           String        @id @default(auto()) @map("_id") @db.ObjectId
+//   Wallet       Wallet        @relation(fields: [wallet_id], references: [id])
+//   wallet_id    String
+//   Asset        Asset         @relation(fields: [asset_id], references: [id])
+//   asset_id     String
+//   shares       Int           @db.Int
+//   price        Float
+//   type         OrderType
+//   status       OrderStatus
+//   partial      Int           @db.Int
+//   version      Int
+//   created_at   DateTime      @default(now())
+//   updated_at   DateTime      @updatedAt
+
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
+// }
+
+enum OrderType {
+  BUY
+  SELL
+}
+
+enum OrderStatus {
+  PENDING
+  OPEN
+  CLOSED
+  FAILED
 }
