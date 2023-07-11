@@ -1,0 +1,42 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Asset {
+  id           String        @id @map("_id")
+  symbol       String
+  price        Float
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  WalletAssets WalletAsset[]
+}
+
+model Wallet {
+  id           String        @id @map("_id")
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  WalletAssets WalletAsset[]
+}
+
+model WalletAsset {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  wallet_id String
+  asset_id  String
+  amount    Float
+  shares    Int      @db.Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  Wallet Wallet @relation(fields: [wallet_id], references: [id])
+  asset  Asset  @relation(fields: [asset_id], references: [id])
+
+  @@unique([wallet_id, asset_id])
+}
