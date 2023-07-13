@@ -14,9 +14,6 @@ Content-Type: application/json
 GET http://localhost:3000/assets
 
 ###
-GET http://localhost:3000/wallets
-
-###
 POST http://localhost:3000/wallets
 Content-Type: application/json
 
@@ -25,4 +22,21 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3000/wallet1/assets
+GET http://localhost:3000/wallets
+
+
+###
+GET http://localhost:3000/wallets/wallet1/assets
+# Content-Type: application/json
+# {
+#   "id": "wallet1"
+# }
+
+###
+POST http://localhost:3000/wallets/wallet1/assets
+Content-Type: application/json
+
+{
+  "asset_id": "asset1",
+  "shares": 10
+}

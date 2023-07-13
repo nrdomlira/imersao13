@@ -1,8 +1,6 @@
 import { Module } from '@nestjs/common';
 import { WalletsService } from './wallets.service';
 import { WalletsController } from './wallets.controller';
-import { WalletAssetsService } from './wallet-assets/wallet-assets.service';
-import { WalletAssetsController } from './wallet-assets/wallet-assets.controller';
 import { WalletAssetsController } from './wallet-assets/wallet-assets.controller';
 import { WalletAssetsService } from './wallet-assets/wallet-assets.service';
 
