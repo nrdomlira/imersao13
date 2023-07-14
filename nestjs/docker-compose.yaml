@@ -10,7 +10,6 @@ services:
       - .:/home/node/app
     extra_hosts:
       - "host.docker.internal:172.17.0.1"
-      # não use docker desktop (linux) ou (windows)
   
   db:
     image: bitnami/mongodb:5.0.17
@@ -38,11 +37,3 @@ volumes:
 networks:
   my-network:
     external: true
-# //Linux ou Mac
-# /etc/hosts
-
-# 127.0.0.1 host.docker.internal
-
-# //Windows
-# C:\Windows\system32\drivers\etc\hosts (bloco de notas como administrador)
-# 127.0.0.1 host.docker.internal

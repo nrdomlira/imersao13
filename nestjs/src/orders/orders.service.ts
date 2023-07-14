@@ -37,6 +37,7 @@ export class OrdersService {
         price: input.price,
         type: input.type,
         status: OrderStatus.PENDING,
+        version: 1,
       },
     });
   }
@@ -48,7 +49,7 @@ export class OrdersService {
       });
 
       await prisma.order.update({
-        where: { id: input.order_id },
+        where: { id: input.order_id, version: order.version },
         data: {
           partial: order.partial - input.negotiated_shares,
           status: input.status,
@@ -60,6 +61,7 @@ export class OrdersService {
               price: input.price,
             },
           },
+          version: { increment: 1 },
         },
       });
 
@@ -87,12 +89,14 @@ export class OrdersService {
                 asset_id: order.asset_id,
                 wallet_id: order.wallet_id,
               },
+              version: walletAsset.version,
             },
             data: {
               shares:
                 order.type === OrderType.BUY
                   ? walletAsset.shares + order.shares
                   : walletAsset.shares - order.shares,
+              version: { increment: 1 },
             },
           });
         } else {
@@ -102,6 +106,7 @@ export class OrdersService {
               asset_id: order.asset_id,
               wallet_id: order.wallet_id,
               shares: input.negotiated_shares,
+              version: 1,
             },
           });
         }
