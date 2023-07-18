@@ -2,13 +2,13 @@
 // import { ChartComponent } from "../../../components/ChartComponent";
 import MyOrders from "@/app/components/MyOrders";
 import { OrderForm } from "@/app/components/OrderForm";
+import { SyncOrders } from "@/app/components/SyncOrders";
 import {
   TabsGroup,
   TabsItem,
   Card,
 } from "@/app/components/flowbite-components";
 import { HiShoppingCart, HiArrowUp } from "@/app/components/react-icons/hi";
-// import { SyncOrders } from "../../../components/SyncOrders";
 
 export default async function HomeBrokerPage({
   params,
@@ -58,11 +58,11 @@ export default async function HomeBrokerPage({
                 },
               }}
             >
-              {/* <SyncOrders wallet_id={params.wallet_id}>
+              <SyncOrders wallet_id={params.wallet_id}>
                 <div className="max-h-96 overflow-y-auto overflow-hidden">
                   <MyOrders wallet_id={params.wallet_id} />
                 </div>
-              </SyncOrders> */}
+              </SyncOrders>
             </Card>
           </div>
         </div>
