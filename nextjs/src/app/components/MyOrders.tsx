@@ -8,8 +8,8 @@ import {
   TableRow,
   Badge
 } from "../components/flowbite-components";
-// import { isHomeBrokerClosed } from "../utils";
-
+import { isHomeBrokerClosed } from "../utils";
+//Server Components - 13
 async function getOrders(wallet_id: string): Promise<Order[]> {
   const response = await fetch(
     `http://host.docker.internal:3000/wallets/${wallet_id}/orders`,
@@ -23,7 +23,7 @@ async function getOrders(wallet_id: string): Promise<Order[]> {
   );
   return response.json();
 }
-
+// 10 am - 17 18
 export default async function MyOrders(props: { wallet_id: string }) {
   const orders = await getOrders(props.wallet_id);
 

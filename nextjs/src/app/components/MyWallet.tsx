@@ -13,7 +13,7 @@ import Link from "next/link";
 import { fetcher, isHomeBrokerClosed } from "../utils";
 import useSWR from "swr";
 import useSWRSubscription, { SWRSubscriptionOptions } from "swr/subscription";
-
+//Server Components - 13
 //
 // async function getWalletAssets(wallet_id: string): Promise<WalletAsset[]> {
 //   const response = await fetch(

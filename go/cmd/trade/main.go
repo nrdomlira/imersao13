@@ -6,10 +6,10 @@ import (
 	"sync"
 
 	ckafka "github.com/confluentinc/confluent-kafka-go/kafka"
-	"github.com/nrdomlira/imersao-13/go/internal/infra/kafka"
-	"github.com/nrdomlira/imersao-13/go/internal/market/dto"
-	"github.com/nrdomlira/imersao-13/go/internal/market/entity"
-	"github.com/nrdomlira/imersao-13/go/internal/market/transformer"
+	"github.com/nrdomlira/imersao13/go/internal/infra/kafka"
+	"github.com/nrdomlira/imersao13/go/internal/market/dto"
+	"github.com/nrdomlira/imersao13/go/internal/market/entity"
+	"github.com/nrdomlira/imersao13/go/internal/market/transformer"
 )
 
 func main() {
