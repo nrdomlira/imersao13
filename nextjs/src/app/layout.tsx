@@ -2,6 +2,8 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ReactNode } from 'react'
+import DefaultNavbar from './components/Navbar'
+import FlowbiteContext from './components/FlowbiteContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,13 +18,11 @@ export default function RootLayout({
   children: ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className="bg-gray-900 text-gray-50 h-screen flex flex-col">
-        {children}
-        {/* <DefaultNavbr />
-        <FlowbiteContext>
-        </FlowbiteContext> */}
-        </body>
+    <html lang="en" className="dark">
+      <body className="bg-gray-900 h-screen flex flex-col">
+        <DefaultNavbar />
+        <FlowbiteContext>{children}</FlowbiteContext>
+      </body>
     </html>
   )
 }
