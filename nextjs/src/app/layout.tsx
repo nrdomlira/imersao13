@@ -17,7 +17,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className="bg-gray-900 text-gray-50 h-screen flex flex-col">
+        {children}
+        {/* <DefaultNavbr />
+        <FlowbiteContext>
+        </FlowbiteContext> */}
+        </body>
     </html>
   )
 }
