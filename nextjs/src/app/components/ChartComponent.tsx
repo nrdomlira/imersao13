@@ -37,10 +37,14 @@ const chartOptions = {
   },
 };
 
+<<<<<<< HEAD
 export const ChartComponent = forwardRef<
   ChartComponentRef,
   { header: string; data?: any[] }
 >((props, ref) => {
+=======
+export const ChartComponent = forwardRef<ChartComponentRef, { header: string; data?: any[] }>((props, ref) => {
+>>>>>>> 2f4fb8910c29a37b9e746c157bc88aeccb667b7d
   const chartContainerRef = useRef() as MutableRefObject<HTMLDivElement>;
   const chartRef = useRef({
     api() {
@@ -74,6 +78,7 @@ export const ChartComponent = forwardRef<
       topColor: colors.areaTopColor,
       bottomColor: colors.areaBottomColor,
     });
+<<<<<<< HEAD
     // seriesRef.current.setData([
     //   { time: "2018-12-22", value: 32.51 },
     //   { time: "2018-12-23", value: 31.11 },
@@ -86,6 +91,8 @@ export const ChartComponent = forwardRef<
     //   { time: "2018-12-30", value: 22.68 },
     //   { time: "2018-12-31", value: 22.67 },
     // ]);
+=======
+>>>>>>> 2f4fb8910c29a37b9e746c157bc88aeccb667b7d
   }, []);
 
   useLayoutEffect(() => {

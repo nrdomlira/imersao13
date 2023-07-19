@@ -9,5 +9,9 @@ module.exports = {
   theme: {
     extend: {},
   },
+<<<<<<< HEAD
   plugins: [require('flowbite/plugin'),require('flowbite-typography'),],
+=======
+  plugins: [require('flowbite/plugin')],
+>>>>>>> 2f4fb8910c29a37b9e746c157bc88aeccb667b7d
 }

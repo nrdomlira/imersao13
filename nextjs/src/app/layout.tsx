@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 import FlowbiteContext from "./components/FlowbiteContext";
 import DefaultNavbar from "./components/Navbar";
 import "./globals.css";
+=======
+import './globals.css'
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import { ReactNode } from 'react'
+import DefaultNavbar from './components/Navbar'
+import FlowbiteContext from './components/FlowbiteContext'
+>>>>>>> 2f4fb8910c29a37b9e746c157bc88aeccb667b7d
 
 export const metadata = {
   title: "Create Next App",
